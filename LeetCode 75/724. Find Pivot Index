@@ -1,0 +1,21 @@
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int sumOfLeft = 0;
+        int sumOfRight = 0;
+        
+        int pivot = 0;
+        for (int i = pivot + 1; i < nums.length; i++) {
+            sumOfRight += nums[i];
+        }
+        
+        return getPivot(sumOfLeft, sumOfRight, pivot, nums);
+    }
+    
+    public int getPivot(int sumOfLeft, int sumOfRight, int pivot, int[] nums) {
+        if (sumOfLeft == sumOfRight) return pivot;
+        
+        if (pivot + 1 == nums.length) return -1;
+        
+        return getPivot(sumOfLeft + nums[pivot], sumOfRight - nums[pivot + 1], pivot + 1, nums);
+    }
+}
