@@ -1,9 +1,5 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
-        return checkIsomorphic(s, t);
-    }
-    
-    public boolean checkIsomorphic(String s, String t) {
         Map<Character, Character> m = new HashMap<>();
         Map<Character, Boolean> v = new HashMap<>();
         
